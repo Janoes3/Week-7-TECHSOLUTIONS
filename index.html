@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maintenance Website</title>
+  <meta name="description" content="Semantic website for maintenance management: logging, scheduling, services, dashboard, and support." />
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ======================
+       Header / Global Nav
+       ====================== -->
+  <header role="banner">
+    <div class="container nav-bar">
+      <div class="branding">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#60a5fa" aria-hidden="true">
+          <path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/>
+        </svg>
+        <span>Maintenance Site</span>
+      </div>
+
+      <button class="btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="primaryNav">Menu</button>
+
+      <nav aria-label="Primary">
+        <ul class="nav-primary" id="primaryNav">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About the Company</a></li>
+
+          <!-- Maintenance Management System submenu -->
+          <li>
+            <details class="submenu">
+              <summary class="nav-link">Maintenance Management System ▾</summary>
+              <div class="submenu-panel" role="menu" aria-label="Maintenance submenu">
+                <ul class="submenu-list">
+                  <li><a href="#mms" class="submenu-link">Overview</a></li>
+                  <li><a href="#mms-log" class="submenu-link">Maintenance Log</a></li>
+                  <li><a href="#mms-scheduler" class="submenu-link">Maintenance Scheduler</a></li>
+                  <li><a href="#mms-notifications" class="submenu-link">Notifications &amp; Alerts</a></li>
+                  <li><a href="#mms-team" class="submenu-link">Team Communication</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <!-- Services submenu -->
+          <li>
+            <details class="submenu">
+              <summary class="nav-link">Services ▾</summary>
+              <div class="submenu-panel" role="menu" aria-label="Services submenu">
+                <ul class="submenu-list">
+                  <li><a href="#services" class="submenu-link">All Services</a></li>
+                  <li><a href="#svc-maintenance" class="submenu-link">Equipment Maintenance Services</a></li>
+                  <li><a href="#svc-hpc" class="submenu-link">High-Precision Component Manufacturing</a></li>
+                  <li><a href="#svc-custom" class="submenu-link">Custom Manufacturing Solutions</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <!-- Dashboard submenu -->
+          <li>
+            <details class="submenu">
+              <summary class="nav-link">Dashboard ▾</summary>
+              <div class="submenu-panel" role="menu" aria-label="Dashboard submenu">
+                <ul class="submenu-list">
+                  <li><a href="#dashboard" class="submenu-link">Overview</a></li>
+                  <li><a href="#dash-status" class="submenu-link">Equipment Status</a></li>
+                  <li><a href="#dash-upcoming" class="submenu-link">Upcoming Maintenance</a></li>
+                  <li><a href="#dash-activity" class="submenu-link">Recent Activity</a></li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <li><a class="nav-link" href="#support">Support &amp; Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================
+       Main Content
+       ====================== -->
+  <main id="main">
+    <!-- Home -->
+    <section id="home" class="hero section" aria-labelledby="home-title">
+      <div class="container">
+        <h1 id="home-title">Plan, Log &amp; Coordinate Maintenance</h1>
+        <p class="muted">A semantic, accessible website structure that covers logging, scheduling, notifications, team communication, services, and an internal dashboard.</p>
+        <div class="meta">
+          <span class="tag">Semantic HTML</span>
+          <span class="tag">Accessible Nav</span>
+          <span class="tag">Responsive</span>
+        </div>
+        <p style="margin-top:1rem;">
+          <a class="btn" href="#mms-log">Record Maintenance</a>
+          <a class="btn secondary" href="#mms-scheduler">View Scheduler</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container grid grid-2">
+        <div class="card">
+          <h2 id="about-title">About the Company</h2>
+          <p>We specialise in:</p>
+          <ul>
+            <li>Manufacture of high-precision components</li>
+            <li>Equipment maintenance services</li>
+            <li>Custom manufacturing solutions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why choose us?</h3>
+          <div class="kpi">
+            <div>
+              <strong>99.2%</strong><br /><span class="muted">On-time maintenance</span>
+            </div>
+          </div>
+          <div class="kpi">
+            <div>
+              <strong>ISO 9001</strong><br /><span class="muted">Quality accreditation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maintenance Management System (overview and sub-sections) -->
+    <section id="mms" class="section" aria-labelledby="mms-title">
+      <div class="container">
+        <h2 id="mms-title">Maintenance Management System</h2>
+        <p class="muted">Centralise logs, scheduling, alerts, and team collaboration.</p>
+
+        <div id="mms-log" class="card" style="margin-top:1rem;">
+          <h3>Maintenance Log</h3>
+          <p class="muted">Record maintenance activities: date, type, notes, and more.</p>
+          <form id="form-log">
+            <div class="grid grid-2">
+              <div>
+                <label for="log-equipment">* Equipment</label>
+                <input id="log-equipment" name="equipment" required placeholder="EQ-000123 — CNC Mill" />
+              </div>
+              <div>
+                <label for="log-date">* Service date</label>
+                <input id="log-date" name="date" type="date" required />
+              </div>
+              <div>
+                <label for="log-type">* Maintenance type</label>
+                <select id="log-type" name="type" required>
+                  <option value="">Choose…</option>
+                  <option>preventive</option>
+                  <option>corrective</option>
+                  <option>inspection</option>
+                  <option>calibration</option>
+                  <option>other</option>
+                </select>
+              </div>
+              <div>
+                <label for="log-duration">Duration (min)</label>
+                <input id="log-duration" name="duration" type="number" min="0" />
+              </div>
+            </div>
+            <div style="margin-top: .75rem;">
+              <label for="log-notes">Technician notes</label>
+              <textarea id="log-notes" name="notes" placeholder="Observations, steps, parts used…"></textarea>
+            </div>
+            <p style="margin-top: .75rem;"><button class="btn" type="submit">Save Log</button></p>
+          </form>
+        </div>
+
+        <div id="mms-scheduler" class="card" style="margin-top:1rem;">
+          <h3>Maintenance Scheduler</h3>
+          <p class="muted">Plan recurring tasks using RRULE-like patterns.</p>
+          <form id="form-task">
+            <div class="grid grid-2">
+              <div>
+                <label for="task-title">* Title</label>
+                <input id="task-title" name="title" required placeholder="Quarterly CNC calibration" />
+              </div>
+              <div>
+                <label for="task-equipment">* Equipment</label>
+                <input id="task-equipment" name="equipment" required placeholder="EQ-000123 — CNC Mill" />
+              </div>
+              <div>
+                <label for="task-type">* Type</label>
+                <select id="task-type" name="type" required>
+                  <option>preventive</option>
+                  <option>inspection</option>
+                  <option>calibration</option>
+                  <option>corrective</option>
+                  <option>other</option>
+                </select>
+              </div>
+              <div>
+                <label for="task-priority">Priority</label>
+                <select id="task-priority" name="priority">
+                  <option>low</option><option selected>medium</option><option>high</option><option>critical</option>
+                </select>
+              </div>
+              <div>
+                <label for="task-start">Start</label>
+                <input id="task-start" name="start" type="datetime-local" />
+              </div>
+              <div>
+                <label for="task-due">Due</label>
+                <input id="task-due" name="due" type="datetime-local" />
+              </div>
+              <div>
+                <label for="task-rrule">Recurrence (RRULE)</label>
+                <input id="task-rrule" name="rrule" placeholder="FREQ=MONTHLY;INTERVAL=3" />
+              </div>
+            </div>
+            <p style="margin-top:.75rem;"><button class="btn" type="submit">Create Task</button></p>
+          </form>
+        </div>
+
+        <!-- ======================
+             Maintenance Priority Checker (Assignment Spec)
+             Placed directly UNDER the scheduler card
+             ====================== -->
+        <div id="mms-priority-checker" class="card priority-card" style="margin-top:1rem;">
+          <h3>Maintenance Priority Checker</h3>
+          <p class="muted" style="margin: .25rem 0 0">
+            Purpose: Classify urgency based on <em>Machine condition</em>, <em>Days since last service</em>, and whether it’s <em>currently in use</em>.
+          </p>
+
+          <form id="mc-form" class="priority-grid priority-checker" novalidate>
+            <!-- Machine condition (required) -->
+            <div class="field">
+              <select id="mc-condition" name="condition" required aria-required="true">
+                <option value="">Choose…</option>
+                <option value="Good">Good</option>
+                <option value="Worn">Worn</option>
+                <option value="Critical">Critical</option>
+              </select>
+              <label for="mc-condition">* Machine condition</label>
+            </div>
+
+            <!-- Days since last service (required, >= 0) -->
+            <div class="field">
+              <input id="mc-days" name="days_since_service" type="number" min="0" step="1" required placeholder=" " />
+              <label for="mc-days">* Days since last service (≥ 0)</label>
+            </div>
+
+            <!-- In use? (required) -->
+            <div class="field">
+              <select id="mc-inuse" name="in_use" required aria-required="true">
+                <option value="">Choose…</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <label for="mc-inuse">* Is the machine currently in use?</label>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+              <button class="btn" id="mc-submit" type="button">Check Priority</button>
+              <button class="btn ghost" id="mc-reset" type="button">Reset</button>
+            </div>
+          </form>
+
+          <div class="priority-result" style="display:flex; align-items:center; gap:.6rem;">
+            <span id="mc-badge" class="priority-badge" data-level="low" aria-live="polite">—</span>
+          </div>
+          <p id="mc-error" class="form-error" aria-live="assertive" style="margin-top:.25rem;"></p>
+        </div>
+
+        <div id="mms-notifications" class="card" style="margin-top:1rem;">
+          <h3>Notifications &amp; Alerts</h3>
+          <ul id="notif-list" class="muted" style="padding-left:1rem;">
+            <li>No notifications yet.</li>
+          </ul>
+        </div>
+
+        <div id="mms-team" class="card" style="margin-top:1rem;">
+          <h3>Team Communication</h3>
+          <form id="form-thread">
+            <div class="grid grid-2">
+              <div>
+                <label for="thread-subject">* Thread subject</label>
+                <input id="thread-subject" name="subject" required placeholder="Coolant leak diagnostics" />
+              </div>
+              <div>
+                <label for="thread-author">Author</label>
+                <input id="thread-author" name="author" placeholder="john@example.com" />
+              </div>
+            </div>
+            <div style="margin-top:.75rem;">
+              <label for="thread-body">* Message</label>
+              <textarea id="thread-body" name="body" required placeholder="Describe the issue…"></textarea>
+            </div>
+            <p style="margin-top:.75rem;"><button class="btn" type="submit">Start Thread</button></p>
+          </form>
+          <div id="thread-list" class="muted" style="margin-top:.75rem;">No threads yet.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title">Services</h2>
+        <div class="grid grid-3" style="margin-top:1rem;">
+          <article id="svc-maintenance" class="card">
+            <h3>Equipment Maintenance Services</h3>
+            <p>Preventive and corrective maintenance to maximise uptime.</p>
+          </article>
+          <article id="svc-hpc" class="card">
+            <h3>High-Precision Component Manufacturing</h3>
+            <p>Manufacture of high-precision components with stringent tolerances.</p>
+          </article>
+          <article id="svc-custom" class="card">
+            <h3>Custom Manufacturing Solutions</h3>
+            <p>Tailored engineering and production to meet unique requirements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="section" aria-labelledby="dashboard-title">
+      <div class="container">
+        <h2 id="dashboard-title">Dashboard (Internal Users)</h2>
+
+        <!-- Overview + Widgets -->
+        <div class="grid grid-3" style="margin-top:1rem;">
+          <div class="card">
+            <h3>Overview</h3>
+            <div class="kpi"><div><strong id="kpi-tasks">0</strong><br><span class="muted">Open tasks</span></div></div>
+            <div class="kpi"><div><strong id="kpi-upcoming">0</strong><br><span class="muted">Upcoming (7 days)</span></div></div>
+            <div class="kpi"><div><strong id="kpi-overdue">0</strong><br><span class="muted">Overdue</span></div></div>
+          </div>
+
+          <div id="dash-status" class="card">
+            <h3>Equipment Status</h3>
+            <ul id="status-list" class="muted" style="padding-left:1rem; margin:0;"></ul>
+          </div>
+
+          <div id="dash-upcoming" class="card">
+            <h3>Upcoming Maintenance</h3>
+            <ul id="upcoming-list" class="muted" style="padding-left:1rem; margin:0;"></ul>
+          </div>
+        </div>
+
+        <div id="dash-activity" class="card" style="margin-top:1rem;">
+          <h3>Recent Activity</h3>
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Equipment</th><th>Action</th><th>By</th></tr>
+            </thead>
+            <tbody id="activity-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support & Contact -->
+    <section id="support" class="section" aria-labelledby="support-title">
+      <div class="container grid grid-2">
+        <div class="card">
+          <h2 id="support-title">Support &amp; Contact</h2>
+          <p class="muted">Need help? Send us a message and we’ll get back to you.</p>
+          <form id="form-contact">
+            <div class="grid grid-2">
+              <div>
+                <label for="c-name">* Name</label>
+                <input id="c-name" name="name" required />
+              </div>
+              <div>
+                <label for="c-email">* Email</label>
+                <input id="c-email" name="email" type="email" required />
+              </div>
+            </div>
+            <div style="margin-top:.75rem;">
+              <label for="c-message">* Message</label>
+              <textarea id="c-message" name="message" required placeholder="Tell us how we can help…"></textarea>
+            </div>
+            <p style="margin-top:.75rem;"><button class="btn" type="submit">Send</button></p>
+          </form>
+        </div>
+        <div class="card">
+          <h2>Company</h2>
+          <address>
+            <strong>Maintenance Team</strong><br />
+            Email: <a href="mailto:maintenance@example.com">maintenance@example.com</a><br />
+            Phone: <a href="tel:+441234567890">+44 1234 567 890</a><br />
+            Address: 1 Industry Way, Telford, UK
+          </address>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p class="muted">© <span id="year"></span> Your Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+``
